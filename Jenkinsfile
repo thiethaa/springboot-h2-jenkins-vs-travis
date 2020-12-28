@@ -10,7 +10,9 @@ node {
     stage('Docker Build'){
         def DOCKER_HOME = '/usr/local/bin/docker'
         sh """
+               echo "logining to docker"
                ${DOCKER_HOME} login
+               echo "build image"
                ${DOCKER_HOME} build -t jenkins-build-image .
         """
     }
