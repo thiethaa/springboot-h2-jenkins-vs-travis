@@ -8,8 +8,8 @@ services:
 script:
   - mvn clean install
   - docker build -t travis-build-image .
-  - docker tag travis-build-image thiethaa/travis-build-image:v.4.0.0
+  - docker tag travis-build-image thiethaa/travis-build-image:v.5.0.0
 
 after_success:
   - echo "$password" | docker login -u "$username" --password-stdin
-  - docker push thiethaa/travis-build-image:v.4.0.0
+  - docker push thiethaa/travis-build-image:v.5.0.0
