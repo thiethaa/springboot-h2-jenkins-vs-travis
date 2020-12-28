@@ -1,11 +1,12 @@
 node {
     stage('Clone Git Repository'){
-
+        git clone https://github.com/thiethaa/springboot-h2-jenkins-vs-travis.git
     }
     stage('Maven Build'){
-        def MAVEN_HOME = tool name: 'Maven', type: 'maven'
-        sh "${MAVEN_HOME}/bin/mvn clean install"
+      MAVEN_HOME = tool name: 'Maven', type: 'maven'
+      sh "${MAVEN_HOME}/bin/mvn clean install"
     }
+
     stage('Docker Build'){
         def DOCKER_HOME = tool name: 'Docker', type: 'dockerTool'
         sh """
