@@ -20,8 +20,8 @@ node {
     stage('Docker Push'){
         def DOCKER_HOME = '/usr/local/bin/docker'
         sh """
-             ${DOCKER_HOME} tag jenkins-build-image thiethaa/jenkins-build-image:v.2.0.0
-             ${DOCKER_HOME} push thiethaa/jenkins-build-image:v.2.0.0
+             ${DOCKER_HOME} tag jenkins-build-image thiethaa/jenkins-build-image:v.3.0.0
+             ${DOCKER_HOME} push thiethaa/jenkins-build-image:v.3.0.0
         """
     }
 }
