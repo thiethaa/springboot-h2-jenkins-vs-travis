@@ -1,6 +1,6 @@
 node {
     stage('Clone Git Repository'){
-        git clone https://github.com/thiethaa/springboot-h2-jenkins-vs-travis.git
+        git 'https://github.com/thiethaa/springboot-h2-jenkins-vs-travis.git'
     }
     stage('Maven Build'){
       MAVEN_HOME = tool name: 'Maven', type: 'maven'
